@@ -1,11 +1,7 @@
 package resources;
 
-import org.glassfish.jersey.server.JSONP;
-
 import javax.ws.rs.*;
-import javax.ws.rs.client.Client;
 import javax.ws.rs.core.MediaType;
-import javax.xml.bind.annotation.XmlRootElement;
 
 @Path("test")
 
