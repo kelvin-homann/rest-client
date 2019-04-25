@@ -1,127 +1,106 @@
 package client;
 
 import javafx.application.Application;
+import javafx.beans.binding.Bindings;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class MainClient extends Application {
     Stage window;
 
-    public static void main(String[] args){
-        launch(args);
+    @Override
+    public void init() throws Exception {
+        super.init();
+    }
+
+    @Override
+    public void stop() throws Exception {
+        super.stop();
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         window = primaryStage;
         window.setTitle("Cooka REST Client");
+        primaryStage.getIcons().add(new Image("https://i.imgur.com/RFRjm31.png"));
 
-        //Vbox - Hauptlayout
-        VBox haupt = new VBox();
-        haupt.setSpacing(10);
-        haupt.setPadding(new Insets(8,8,8,8));
+        //Top Layout
+        HBox haupt = new HBox();
+        haupt.setAlignment(Pos.TOP_CENTER);
+        haupt.setSpacing(5);
+        haupt.setPadding(new Insets(20,50,8,50));
 
-        //HBox top, obere Leiste mit Buttons
-        HBox top = new HBox();
-        top.setSpacing(10);
+        ComboBox comboBox = new ComboBox();
+        comboBox.getItems().addAll("GET","POST","PUT","DELETE");
+        comboBox.getSelectionModel().selectFirst();
 
-        //Buttons in top
-        Button buttonSave = new Button();
-        buttonSave.setPrefSize(100, 20);
-//        Image speichern = new Image(getClass().getResourceAsStream("save32.png"));
-//        buttonSave.setGraphic(new ImageView(speichern));
-
-        Button buttonShow = new Button("Show");
-        buttonShow.setPrefSize(100, 20);
-
-        //buttom enhält alle Elemente unter top
-        HBox bottom = new HBox();
-        bottom.setPadding(new Insets(0,0,0,0));
-        bottom.setSpacing(10);
-
-
-        //Pane kann als Zeichenfläche genutzt werden
-        Pane canvas = new Pane();
-        canvas.setStyle("-fx-background-color: white;");
-        canvas.setPrefSize(700,550);
-
-        //TabPane mit Tabs einfügen
-        TabPane tabPane = new TabPane();
-        tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.UNAVAILABLE);
-        Tab tab1 = new Tab();
-        tab1.setText("Content");
-        Tab tab2 = new Tab();
-        tab2.setText("Style");
-        tabPane.getTabs().addAll(tab1, tab2);
-        tabPane.setPrefHeight(600);
-        tabPane.setPrefWidth(220);
-
-        Pane contentTab1 = new Pane();
-        contentTab1.setStyle("-fx-background-color: #eeeeee;");
-        tab1.setContent(contentTab1);
-
-        Pane contentTab2 = new Pane();
-        contentTab2.setStyle("-fx-background-color: #eeeeee;");
-        tab2.setContent(contentTab2);
-
-        //Buttons und Textfeld unter Tabpane
-        Button insertButton = new Button();
-        insertButton.setText("Add word");
-        insertButton.setPrefWidth(220);
-
-        TextField wordText = new TextField();
-
-        //Neue Vbox mit Tabs, Textfeld und Button
-        //Insert VBOX
-        VBox bottomRight = new VBox();
-        bottomRight.setPadding(new Insets(0));
-        bottomRight.setSpacing(8);
-        bottomRight.setPrefHeight(800);
-        bottomRight.setAlignment(Pos.CENTER);
-
-
-        //Alle Komponenten "zusammenfügen"
-        bottomRight.getChildren().addAll(tabPane, wordText, insertButton);
-        bottom.getChildren().addAll(canvas, bottomRight);
-        haupt.getChildren().addAll(top, bottom);
-        Scene scene = new Scene(haupt, 1280,720);
-        top.getChildren().addAll(buttonSave, buttonShow);
-
-
-        AtomicInteger i = new AtomicInteger(); //Muss benutzt werden, da normaler Integer in Lamba-Expression nicht benutzt werden kann
-
-        //Buttonlogik
-        insertButton.setOnAction((e) ->{
-            if(!wordText.getText().isEmpty()){
-                Text text = new Text(wordText.getText());
-                text.setX(100);
-                text.setY(200);
-                canvas.getChildren().add(text);
-
-                Text t2 = new Text();
-                t2.setText(wordText.getText());
-                t2.setX(10);
-                t2.setY(25 + 20 * i.getAndIncrement());
-                contentTab1.getChildren().add(t2);
+        // Is called if the ComboBox changes
+        comboBox.valueProperty().addListener(new ChangeListener<String>() {
+            @Override public void changed(ObservableValue ov, String t, String t1) {
+                // Getting ComboBox Value
+//                System.out.println(comboBox.getValue());
             }
         });
 
+        TextField urlTextField = new TextField();
+        urlTextField.setText(RESTClient.BASE_URL);
+        urlTextField.setPrefWidth(800);
+
+        Button buttonSend = new Button("Send");
+//        buttonSend.setPrefSize(100, 20);
+
+        buttonSend.addEventHandler(ActionEvent.ACTION, new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                // RESTClient
+                RESTClient restClient = new RESTClient();
+
+                // Getting ComboBox Value
+                switch (comboBox.getValue().toString()) {
+                    case "GET":
+                        System.out.println("GET");
+                        System.out.println(restClient.GET("recipes/1"));
+                        break;
+                    case "POST":
+                        System.out.println("POST");
+                        restClient.POST("recipes/22", "test");
+                    case "PUT":
+                        System.out.println("PUT");
+                        restClient.PUT("recipes/1", "test");
+                        break;
+                    case "DELETE":
+                        System.out.println("DELETE");
+                        restClient.DELETE("recipes/1");
+                        break;
+                    default:
+                        System.out.println("Invalid Input");
+                        break;
+                }
+            }
+        });
+
+        haupt.getChildren().addAll(comboBox, urlTextField, buttonSend);
+
+        Scene scene = new Scene(haupt, 1280, 720);
+        scene.getStylesheets().add(getClass().getResource("css/style.css").toExternalForm());
         window.setScene(scene);
         window.setResizable(false);
         window.show();
+    }
+
+    public static void main(String[] args){
+        launch(args);
     }
 }

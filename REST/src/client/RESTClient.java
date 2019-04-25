@@ -11,10 +11,10 @@ import javax.ws.rs.core.Response;
 import java.util.Scanner;
 
 public class RESTClient {
-	private static final String BASE_URL = "https://www.sebastianzander.de/cookaweb/api/v1";
-	private static Scanner reader = new Scanner(System.in);
+	public static final String BASE_URL = "https://www.sebastianzander.de/cookaweb/api/v1";
+//	private static Scanner reader = new Scanner(System.in);
 
-	private String GET(String path){
+	public String GET(String path){
 		String string = "";
 		try {
 			System.out.println("GET: " + BASE_URL + "/" + path);
@@ -40,7 +40,7 @@ public class RESTClient {
 		return string;
 	}
 
-	private void PUT(String path, String update){
+	public void PUT(String path, String update){
 		try {
 			System.out.println("PUT: " + BASE_URL + "/" + path);
 			Gson gson = new Gson();
@@ -53,16 +53,12 @@ public class RESTClient {
 
 			System.out.println("HTTP Response: " + response.getStatus() + " " + response.getStatusInfo());
 
-		} catch (NotFoundException e){
-			System.out.println(Response.Status.NOT_FOUND);
-		} catch (BadRequestException e){
-			System.out.println(Response.Status.BAD_REQUEST);
-		} catch (NotAllowedException e){
-			System.out.println(Response.Status.METHOD_NOT_ALLOWED);
+		} catch (WebApplicationException e){
+			e.getResponse();
 		}
 	}
 
-	private void POST(String path, String update){
+	public void POST(String path, String update){
 		try {
 			Gson gson = new Gson();
 			Client client = ClientBuilder.newClient();
@@ -77,58 +73,58 @@ public class RESTClient {
 			}
 
 			System.out.println("HTTP Response: " + response.getStatus() + " " + response.getStatusInfo());
-		} catch (NotFoundException e){
-			System.out.println(Response.Status.NOT_FOUND);
-		} catch (BadRequestException e){
-			System.out.println(Response.Status.BAD_REQUEST);
-		} catch (NotAllowedException e){
-			System.out.println(Response.Status.METHOD_NOT_ALLOWED);
+		} catch (WebApplicationException e){
+			e.getResponse();
 		}
 	}
 
-	private void DELETE(String path){
-		Client client = ClientBuilder.newClient();
-		WebTarget webTarget = client.target(BASE_URL).path(path);
+	public void DELETE(String path){
+		try{
+			Client client = ClientBuilder.newClient();
+			WebTarget webTarget = client.target(BASE_URL).path(path);
 
-		Invocation.Builder invocationBuilder =  webTarget.request();
-		Response response = invocationBuilder.delete();
+			Invocation.Builder invocationBuilder =  webTarget.request();
+			Response response = invocationBuilder.delete();
 
-		System.out.println("HTTP Response: " + response.getStatus() + " " + response.getStatusInfo());
+			System.out.println("HTTP Response: " + response.getStatus() + " " + response.getStatusInfo());
+		} catch (WebApplicationException e){
+			e.getResponse();
+		}
 	}
 
 	public static void main(String[] args) {
-		RESTClient restClient = new RESTClient();
-		System.out.print("Type in the Request Type: ");
-		String input = reader.nextLine();
-
-		switch (input.toUpperCase()) {
-			case "GET":
-				System.out.print("Specified Path: e.g. recipes ");
-				String getPath = reader.nextLine();
-				System.out.println(restClient.GET(getPath));
-				break;
-			case "POST":
-				System.out.print("Specified Path: e.g. recipes ");
-				String postPath = reader.nextLine();
-				System.out.print("Input Changes ");
-				String postChanges = reader.nextLine();
-				restClient.POST(postPath, postChanges);
-			case "PUT":
-				System.out.print("Specified Path: e.g. recipes ");
-				String putPath = reader.nextLine();
-				System.out.print("Input Changes ");
-				String putChanges = reader.nextLine();
-				restClient.PUT(putPath, putChanges);
-				break;
-			case "DELETE":
-				System.out.print("Specified Path: e.g. recipes ");
-				String delPath = reader.nextLine();
-				restClient.DELETE(delPath);
-				break;
-			default:
-				System.out.println("Invalid Input");
-				break;
-		}
-		reader.close();
+//		RESTClient restClient = new RESTClient();
+//		System.out.print("Type in the Request Type: ");
+//		String input = reader.nextLine();
+//
+//		switch (input.toUpperCase()) {
+//			case "GET":
+//				System.out.print("Specified Path: e.g. recipes ");
+//				String getPath = reader.nextLine();
+//				System.out.println(restClient.GET(getPath));
+//				break;
+//			case "POST":
+//				System.out.print("Specified Path: e.g. recipes ");
+//				String postPath = reader.nextLine();
+//				System.out.print("Input Changes ");
+//				String postChanges = reader.nextLine();
+//				restClient.POST(postPath, postChanges);
+//			case "PUT":
+//				System.out.print("Specified Path: e.g. recipes ");
+//				String putPath = reader.nextLine();
+//				System.out.print("Input Changes ");
+//				String putChanges = reader.nextLine();
+//				restClient.PUT(putPath, putChanges);
+//				break;
+//			case "DELETE":
+//				System.out.print("Specified Path: e.g. recipes ");
+//				String delPath = reader.nextLine();
+//				restClient.DELETE(delPath);
+//				break;
+//			default:
+//				System.out.println("Invalid Input");
+//				break;
+//		}
+//		reader.close();
 	}
 }

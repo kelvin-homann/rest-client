@@ -1,0 +1,66 @@
+.root {
+    -fx-font-size: 14px;
+    -fx-font-family: "Roboto";
+    -fx-background-color: #141414;
+}
+
+.button{
+    -fx-font-size: 16px;
+    -fx-font-family: "Roboto";
+    -fx-background-color: #52d12b;
+    -fx-padding: 10px 20px 10px 20px;
+    -fx-background-radius: 4 4 4 4;
+    -fx-text-fill: #ffffff;
+}
+
+.button:pressed{
+    -fx-background-color: #7dff56;
+}
+
+.button:hover{
+    -fx-background-color: #7dff56;
+}
+
+.button:focused{
+    -fx-background-color: #52d12b;
+
+}
+
+.combo-box .list-cell
+{
+    -fx-background: #161616;
+    -fx-alignment: center;
+    -fx-background-color: #161616;
+    -fx-font-size: 16px;
+    -fx-font-family: "Roboto";
+    -fx-text-fill:  #ffffff;
+    -fx-padding: 10px 20px 10px 20px;
+}
+
+.combo-box-popup .list-view .list-cell:filled:hover
+{
+    -fx-background-color: #202020;
+    -fx-text-fill: #ffffff;
+}
+
+.combo-box-base
+{
+    -fx-background-color: #202020;
+}
+
+.combo-box-base:showing
+{
+    -fx-color: #141414;
+}
+
+.text-field {
+    -fx-background-color: #202020;
+    -fx-background-radius: 2;
+    -fx-font-size: 16px;
+    -fx-font-family: "Roboto";
+    -fx-text-fill: #ffffff;
+    -fx-padding: 10px;
+}
+.text-field:focused {
+    -fx-background-color: #242424;
+}
