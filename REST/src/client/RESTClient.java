@@ -1,8 +1,6 @@
 package client;
 
 import com.google.gson.Gson;
-import resources.entitys.Recipe;
-
 import javax.ws.rs.BadRequestException;
 import javax.ws.rs.NotAllowedException;
 import javax.ws.rs.NotFoundException;
@@ -26,8 +24,6 @@ public class RESTClient {
 
 			Invocation.Builder invocationBuilder =  webTarget.request(MediaType.APPLICATION_JSON);
 			Response response = invocationBuilder.get();
-//
-//			RecipeEntity recipe = response.getEntity(RecipeEntity.class);
 
 			System.out.println("HTTP Response: " + response.getStatus() + " " + response.getStatusInfo());
 
