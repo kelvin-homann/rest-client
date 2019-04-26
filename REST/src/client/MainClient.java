@@ -18,7 +18,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class MainClient extends Application {
-    Stage window;
+    private static final String BASE_URL = "https://www.sebastianzander.de/cookaweb/api/v1";
 
     @Override
     public void init() throws Exception {
@@ -32,8 +32,7 @@ public class MainClient extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        window = primaryStage;
-        window.setTitle("Cooka REST Client");
+        primaryStage.setTitle("Cooka REST Client");
         primaryStage.getIcons().add(new Image("https://i.imgur.com/RFRjm31.png"));
 
         //Top Layout
@@ -49,17 +48,17 @@ public class MainClient extends Application {
         // Is called if the ComboBox changes
         comboBox.valueProperty().addListener(new ChangeListener<String>() {
             @Override public void changed(ObservableValue ov, String t, String t1) {
-                // Getting ComboBox Value
-//                System.out.println(comboBox.getValue());
+                // TODO possibly adjust the UI Based on the Selection e.g Enabling/Disabling Object generation for PUT/POST and maybe Labels explaining stuff
             }
         });
 
+        // TODO add TableView with JSON Data
+
         TextField urlTextField = new TextField();
-        urlTextField.setText(RESTClient.BASE_URL);
+        urlTextField.setText(BASE_URL);
         urlTextField.setPrefWidth(800);
 
         Button buttonSend = new Button("Send");
-//        buttonSend.setPrefSize(100, 20);
 
         buttonSend.addEventHandler(ActionEvent.ACTION, new EventHandler<ActionEvent>() {
             @Override
@@ -71,21 +70,22 @@ public class MainClient extends Application {
                 switch (comboBox.getValue().toString()) {
                     case "GET":
                         System.out.println("GET");
-                        System.out.println(restClient.GET("recipes/1"));
+                        System.out.println(restClient.GET(urlTextField.getText()));
                         break;
                     case "POST":
                         System.out.println("POST");
-                        restClient.POST("recipes/22", "test");
+                        // TODO Input JSON
+                        restClient.POST(urlTextField.getText(), "test");
                     case "PUT":
                         System.out.println("PUT");
-                        restClient.PUT("recipes/1", "test");
+                        // TODO Input JSON
+                        restClient.PUT(urlTextField.getText(), "test");
                         break;
                     case "DELETE":
                         System.out.println("DELETE");
-                        restClient.DELETE("recipes/1");
+                        restClient.DELETE(urlTextField.getText());
                         break;
                     default:
-                        System.out.println("Invalid Input");
                         break;
                 }
             }
@@ -95,9 +95,9 @@ public class MainClient extends Application {
 
         Scene scene = new Scene(haupt, 1280, 720);
         scene.getStylesheets().add(getClass().getResource("css/style.css").toExternalForm());
-        window.setScene(scene);
-        window.setResizable(false);
-        window.show();
+        primaryStage.setScene(scene);
+        primaryStage.setResizable(false);
+        primaryStage.show();
     }
 
     public static void main(String[] args){
