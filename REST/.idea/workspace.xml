@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3a4227d-9d2a-4d79-a2bd-7ea324435bf0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jfoenix_8_0_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/client/LoginPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/REST.iml" beforeDir="false" afterPath="$PROJECT_DIR$/REST.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/REST/client/MainClient$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/REST/client/MainClient$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/REST/client/MainClient$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/REST/client/MainClient$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/REST/client/MainClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/REST/client/MainClient.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/REST/client/RESTClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/REST/client/RESTClient.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/MainClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/MainClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/RESTClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/RESTClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/css/style.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,48 +38,38 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/RESTClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="14" column="59" lean-forward="true" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="59" />
+            <state relative-caret-position="238">
+              <caret line="51" column="5" lean-forward="true" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#569#1069#0" />
+                <element signature="method#GET#0;class#RESTClient#0" />
                 <element signature="method#PUT#0;class#RESTClient#0" />
                 <element signature="method#POST#0;class#RESTClient#0" />
+                <element signature="method#DELETE#0;class#RESTClient#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client/MainClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-398">
+              <caret line="40" column="30" lean-forward="true" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="class#1979:3188" />
+                <element signature="e#3225#3235#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/client/MainClient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="58" column="39" lean-forward="true" selection-start-line="58" selection-start-column="39" selection-end-line="58" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="61" column="22" lean-forward="true" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/RecipeEntity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="537">
-              <caret line="142" selection-start-line="142" selection-end-line="142" />
-              <folding>
-                <element signature="e#2880#2881#0" expanded="true" />
-                <element signature="e#2916#2917#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="435">
+              <caret line="121" lean-forward="true" selection-start-line="121" selection-end-line="121" />
             </state>
           </provider>
         </entry>
@@ -88,8 +80,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -99,6 +91,11 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Kelvin Homann &lt;kelvin.homann@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
@@ -136,9 +133,11 @@
         <option value="$PROJECT_DIR$/src/client/RestClient.java" />
         <option value="$PROJECT_DIR$/src/client/RecipeEntity.java" />
         <option value="$PROJECT_DIR$/src/client/css/custombutton.css" />
+        <option value="$PROJECT_DIR$/src/client/BoundsPlayground.java" />
+        <option value="$PROJECT_DIR$/src/client/LoginPage.java" />
         <option value="$PROJECT_DIR$/src/client/RESTClient.java" />
-        <option value="$PROJECT_DIR$/src/client/css/style.css" />
         <option value="$PROJECT_DIR$/src/client/MainClient.java" />
+        <option value="$PROJECT_DIR$/src/client/css/style.css" />
       </list>
     </option>
   </component>
@@ -192,7 +191,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556225184533" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556313737862" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -235,12 +234,12 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.MainClient">
-    <configuration name="DBConnect" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="server.DBConnect" />
+    <configuration name="BoundsPlayground" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="client.BoundsPlayground" />
       <module name="REST" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="server.*" />
+          <option name="PATTERN" value="client.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -248,12 +247,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DatabaseClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="server.DatabaseClient" />
+    <configuration name="LoginPage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="client.LoginPage" />
       <module name="REST" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="server.*" />
+          <option name="PATTERN" value="client.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -354,10 +353,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.MainClient" />
+        <item itemvalue="Application.LoginPage" />
+        <item itemvalue="Application.BoundsPlayground" />
         <item itemvalue="Application.RESTClient" />
         <item itemvalue="Application.RESTServer" />
-        <item itemvalue="Application.DatabaseClient" />
-        <item itemvalue="Application.DBConnect" />
       </list>
     </recent_temporary>
   </component>
@@ -386,11 +385,21 @@
       <workItem from="1556102907046" duration="17202000" />
       <workItem from="1556127876578" duration="149000" />
       <workItem from="1556204072199" duration="17769000" />
+      <workItem from="1556264057999" duration="706000" />
+      <workItem from="1556306277880" duration="6171000" />
     </task>
+    <task id="LOCAL-00001" summary="small changes;">
+      <created>1556264757448</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1556264757448</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96958000" />
+    <option name="totallyTimeSpent" value="103835000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -405,7 +414,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28997868" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19616205" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -414,7 +423,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -443,6 +452,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="small changes;" />
+    <option name="LAST_COMMIT_MESSAGE" value="small changes;" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Test.java" />
@@ -613,9 +626,17 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/JSONParser.java" />
+    <entry file="file://$PROJECT_DIR$/src/client/css/custombutton.css" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/javafx-src.zip!/javafx/beans/value/ChangeListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="63" column="1" lean-forward="true" selection-start-line="63" selection-start-column="1" selection-end-line="63" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/RecipeEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
+        <state relative-caret-position="452">
           <caret line="142" selection-start-line="142" selection-end-line="142" />
           <folding>
             <element signature="e#2880#2881#0" expanded="true" />
@@ -624,36 +645,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/css/custombutton.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/RESTClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="14" column="59" lean-forward="true" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="59" />
+        <state relative-caret-position="238">
+          <caret line="51" column="5" lean-forward="true" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#569#1069#0" />
+            <element signature="method#GET#0;class#RESTClient#0" />
             <element signature="method#PUT#0;class#RESTClient#0" />
             <element signature="method#POST#0;class#RESTClient#0" />
+            <element signature="method#DELETE#0;class#RESTClient#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/LoginPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="93" column="16" selection-start-line="93" selection-start-column="8" selection-end-line="93" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/MainClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-398">
+          <caret line="40" column="30" lean-forward="true" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#1979:3188" />
+            <element signature="e#3225#3235#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="61" column="22" lean-forward="true" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/MainClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="58" column="39" lean-forward="true" selection-start-line="58" selection-start-column="39" selection-end-line="58" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="435">
+          <caret line="121" lean-forward="true" selection-start-line="121" selection-end-line="121" />
         </state>
       </provider>
     </entry>
