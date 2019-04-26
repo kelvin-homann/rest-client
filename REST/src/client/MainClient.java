@@ -39,6 +39,7 @@ public class MainClient extends Application {
         HBox center = new HBox();
 
         center.setSpacing(10);
+        center.setAlignment(Pos.BOTTOM_CENTER);
 
         top.setAlignment(Pos.TOP_CENTER);
         top.setVgap(5);
@@ -97,7 +98,7 @@ public class MainClient extends Application {
         });
 
         final TableView<String[]> tableView = new TableView<String[]>();
-        tableView.setMinSize(500, 300);
+        tableView.setMinSize(1200, 200);
 
         top.add(comboBox, 0, 0);
         top.add(urlTextField, 1, 0);
