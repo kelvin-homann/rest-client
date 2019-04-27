@@ -17,10 +17,6 @@ public class Ingredient {
         this.ingredientId = ingredientId;
         this.nameStringId = nameStringId;
         this.descriptionStringId = descriptionStringId;
-
-        // todo: do we need to query and cache the strings here?
-        // query name from String.Factory?
-        // query description from String.Factory?
     }
 
     public long getIngredientId() {
