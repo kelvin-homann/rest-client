@@ -1,6 +1,8 @@
 package client;
 
 import com.google.gson.Gson;
+
+import javax.print.attribute.standard.Media;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.client.*;
 import javax.ws.rs.core.MediaType;

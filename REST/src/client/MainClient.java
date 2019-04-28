@@ -3,9 +3,11 @@ package client;
 import client.Entitys.*;
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
+import com.google.gson.stream.JsonReader;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -18,18 +20,32 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+import java.io.*;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
 // TODO Javadoc
-// TODO generate JSON for PUT and show it with Stackpane
+// TODO refactor ugly code
 public class MainClient extends Application {
     private static final String BASE_URL = "https://www.sebastianzander.de/cookaweb/api/v1/";
+    private POSTTags tag; // Tag Object for POST method
+    private String tagJSON;
 
     private void clearTable(TableView tableView){
         tableView.getColumns().clear();
         tableView.getItems().clear();
+    }
+
+    private User getUser() {
+        Gson gson = new Gson();
+        JsonReader json = null;
+        try {
+            json = new JsonReader(new FileReader("user.json"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return gson.fromJson(json, User.class);
     }
 
     @Override
@@ -76,15 +92,86 @@ public class MainClient extends Application {
         Label httpLabel = new Label("");
         httpLabel.setTextFill(Color.WHITE);
 
+
         // Center Layout
-        VBox center = new VBox();
+        VBox getCenter = new VBox();
 
-        center.setSpacing(10);
-        center.setAlignment(Pos.TOP_CENTER);
-        center.setMargin(urlTextField, new Insets(20, 20, 20, 20));
-        center.setMargin(httpLabel, new Insets(20, 20, 20, 20));
+        getCenter.setSpacing(10);
+        getCenter.setAlignment(Pos.TOP_CENTER);
+        getCenter.setMargin(urlTextField, new Insets(20, 20, 20, 20));
+        getCenter.setMargin(httpLabel, new Insets(20, 20, 20, 20));
 
-        center.getChildren().addAll(httpLabel, tableView);
+        getCenter.getChildren().addAll(httpLabel, tableView);
+
+        Label descLabel = new Label("Create new Tag");
+        Label uidLabel = new Label("User ID");
+        Label tokenLabel= new Label("Acesstoken");
+        Label nameLabel = new Label("Name");
+        Label jsonLabel = new Label();
+
+        String textStyle = " -fx-font-size: 16px;\n" +
+                "    -fx-font-family: \"Roboto\";\n" +
+                "    -fx-text-fill: #ffffff;";
+
+        descLabel.setStyle(textStyle);
+        uidLabel.setStyle(textStyle);
+        tokenLabel.setStyle(textStyle);
+        nameLabel.setStyle(textStyle);
+        jsonLabel.setStyle(textStyle);
+
+        TextField uidField = new TextField();
+        TextField tokenField = new TextField();
+        TextField nameField = new TextField();
+
+        uidField.setPrefWidth(350);
+        tokenField.setPrefWidth(350);
+        nameField.setPrefWidth(350);
+
+        Button createButton = new Button("Create");
+        Button userButton = new Button("User");
+
+        GridPane postCenter = new GridPane();
+        postCenter.setHgap(10);
+        postCenter.setVgap(30);
+        postCenter.setAlignment(Pos.TOP_CENTER);
+        postCenter.setPadding(new Insets(50, 0, 0, 0));
+        postCenter.add(descLabel, 0, 0);
+        postCenter.add(uidLabel, 0, 1);
+        postCenter.add(uidField, 1, 1);
+        postCenter.add(tokenLabel, 0, 2);
+        postCenter.add(tokenField, 1, 2);
+        postCenter.add(nameLabel, 0, 3);
+        postCenter.add(nameField, 1, 3);
+        postCenter.add(createButton, 0, 4);
+        postCenter.add(userButton, 1, 4);
+        postCenter.add(jsonLabel, 2, 5);
+        postCenter.setVisible(false);
+
+        StackPane stackPane = new StackPane();
+        ObservableList list = stackPane.getChildren();
+
+        list.addAll(getCenter, postCenter);
+
+        userButton.addEventHandler(ActionEvent.ACTION, new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                uidField.setText(String.valueOf(getUser().getUserId()));
+                tokenField.setText(String.valueOf(getUser().getAccesstoken()));
+            }
+        });
+
+        createButton.addEventHandler(ActionEvent.ACTION, new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Gson gson = new GsonBuilder().setPrettyPrinting().create();
+                try{
+                    tag = new POSTTags(Integer.parseInt(uidField.getText()), tokenField.getText(), nameField.getText());
+                }catch (NumberFormatException e){
+                }
+                tagJSON = gson.toJson(tag);
+                jsonLabel.setText(tagJSON);
+            }
+        });
 
         // Send Button Event handling: on click
         buttonSend.addEventHandler(ActionEvent.ACTION, new EventHandler<ActionEvent>() {
@@ -289,7 +376,7 @@ public class MainClient extends Application {
 
                         break;
                     case "POST":
-                        httpLabel.setText(restClient.POST(urlTextField.getText(), "test"));
+                        httpLabel.setText(restClient.POST(urlTextField.getText(), tagJSON));
                     case "PUT":
                         httpLabel.setText(restClient.PUT(urlTextField.getText(), "test"));
                         break;
@@ -312,12 +399,18 @@ public class MainClient extends Application {
                 } else {
                     tableView.setVisible(true);
                 }
+
+                if (ov.getValue().equals("POST")){
+                    postCenter.setVisible(true);
+                } else {
+                    postCenter.setVisible(false);
+                }
             }
         });
 
         // adding layouts to the main layout
         root.setTop(top);
-        root.setCenter(center);
+        root.setCenter(stackPane);
 
         Scene scene = new Scene(root, 1280, 720); // main layout + size
         scene.getStylesheets().add(getClass().getResource("css/style.css").toExternalForm()); // Adding css styling

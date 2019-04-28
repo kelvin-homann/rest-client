@@ -5,12 +5,22 @@ public class Tags {
     private String name;
     private String lastActiveDateTime;
     private int followerCount;
+    private int recipeCount;
+
+    public Tags(int tagId, String name, String lastActiveDateTime, int followerCount, int recipeCount) {
+        this.tagId = tagId;
+        this.name = name;
+        this.lastActiveDateTime = lastActiveDateTime;
+        this.followerCount = followerCount;
+        this.recipeCount = recipeCount;
+    }
+
+    public Tags() {
+    }
 
     public int getRecipeCount() {
         return recipeCount;
     }
-
-    private int recipeCount;
 
     public int getTagId() {
         return tagId;
