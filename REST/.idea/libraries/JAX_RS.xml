@@ -1,8 +1,6 @@
 <component name="libraryTable">
   <library name="JAX-RS" type="JAX-RS">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../Vorgaben_REST/Vorgaben_REST/JERSEY-Info/REST jersey  jaxrs-ri-2.25.1.zip!/" />
-    </CLASSES>
+    <CLASSES />
     <JAVADOC />
     <SOURCES />
   </library>

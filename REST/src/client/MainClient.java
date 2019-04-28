@@ -205,7 +205,10 @@ public class MainClient extends Application {
                                 TableColumn<String, Tags> followerColumn = new TableColumn<>("Follower");
                                 followerColumn.setCellValueFactory(new PropertyValueFactory<>("followerCount"));
 
-                                tableView.getColumns().addAll(idColumn, nameColumn, activeColumn, followerColumn);
+                                TableColumn<String, Tags> recipeColumn = new TableColumn<>("RecipeCount");
+                                recipeColumn.setCellValueFactory(new PropertyValueFactory<>("recipeCount"));
+
+                                tableView.getColumns().addAll(idColumn, nameColumn, activeColumn, followerColumn, recipeColumn);
 
                                 for (Tags category : tagList) {
                                     tableView.getItems().add(category);

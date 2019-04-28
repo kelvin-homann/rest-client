@@ -60,7 +60,7 @@ public class RESTClient {
 			e.getResponse();
 		}
 
-        return "Error";
+        return "Unknown Error";
 	}
 
 	public String DELETE(String path){
@@ -75,6 +75,6 @@ public class RESTClient {
 		} catch (WebApplicationException e){
 			e.getResponse();
 		}
-		return "Error";
+		return "Unknown Error";
 	}
 }

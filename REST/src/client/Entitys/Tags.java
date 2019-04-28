@@ -6,6 +6,12 @@ public class Tags {
     private String lastActiveDateTime;
     private int followerCount;
 
+    public int getRecipeCount() {
+        return recipeCount;
+    }
+
+    private int recipeCount;
+
     public int getTagId() {
         return tagId;
     }

@@ -1,0 +1,23 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="REST">
+    <output-path>$PROJECT_DIR$/out/artifacts/REST</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="client.MainClient" />
+        <option name="description" value="" />
+        <option name="height" value="720" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="nativeBundle" value="all" />
+        <option name="title" value="Cooka REST Client" />
+        <option name="vendor" value="Kelvin Homann" />
+        <option name="version" value="1.0" />
+        <option name="width" value="1280" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="REST.jar">
+        <element id="module-output" name="REST" />
+      </element>
+    </root>
+  </artifact>
+</component>
