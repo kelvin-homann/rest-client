@@ -105,7 +105,7 @@ public class MainClient extends Application {
                         List<Results> httpResultsArrayList = httpGson.fromJson(httpResponse, gettingHttpResponse);
 
                         if (httpResultsArrayList != null)
-                            httpLabel.setText(httpResultsArrayList.get(0).getMessage() + " | " + httpResultsArrayList.get(0).getHttpResponseCode());
+                            httpLabel.setText(httpResultsArrayList.get(0).getMessage() + " | " + httpResultsArrayList.get(0).getResultCode());
 
                         if (urlTextField.getText().contains("recipes") || !urlTextField.getText().contains("categories") || !urlTextField.getText().contains("tags") || !urlTextField.getText().contains("steps")) {
                             try{
@@ -224,9 +224,9 @@ public class MainClient extends Application {
                                 clearTable(tableView);
 
                                 // Create List with needed Objects
-                                Type deserializedTagsList = new TypeToken<List<Steps>>(){}.getType();
-                                Gson gson = new GsonBuilder().registerTypeAdapter(deserializedTagsList, new StepsDeserializer()).create();
-                                List<Steps> stepsList = gson.fromJson(httpResponse, deserializedTagsList);
+                                Type deserializedStepsList = new TypeToken<List<Steps>>(){}.getType();
+                                Gson gson = new GsonBuilder().registerTypeAdapter(deserializedStepsList, new StepsDeserializer()).create();
+                                List<Steps> stepsList = gson.fromJson(httpResponse, deserializedStepsList);
 
                                 // Creating the table
                                 TableColumn<String, Steps> idColumn = new TableColumn<>("Recipe ID");
@@ -250,6 +250,43 @@ public class MainClient extends Application {
                             }catch(NullPointerException e){
                             }
                         }
+
+                        if(urlTextField.getText().contains("ingredients")){
+                            try{
+                                // Clearing the TableView
+                                clearTable(tableView);
+
+                                // Create List with needed Objects
+                                Type deserializedIngredientsList = new TypeToken<List<Ingredient>>(){}.getType();
+                                Gson gson = new GsonBuilder().registerTypeAdapter(deserializedIngredientsList, new IngredientsDeserializer()).create();
+                                List<Ingredient> ingredientList = gson.fromJson(httpResponse, deserializedIngredientsList);
+
+                                // Creating the table
+                                TableColumn<String, Ingredient> idColumn = new TableColumn<>("ID");
+                                idColumn.setCellValueFactory(new PropertyValueFactory<>("ingredientId"));
+
+                                TableColumn<String, Ingredient> nameColumn = new TableColumn<>("Name");
+                                nameColumn.setCellValueFactory(new PropertyValueFactory<>("ingredientName"));
+
+                                TableColumn<String, Ingredient> descColumn = new TableColumn<>("Description");
+                                descColumn.setCellValueFactory(new PropertyValueFactory<>("ingredientDescription"));
+
+                                TableColumn<String, Ingredient> titleColumn = new TableColumn<>("Amount");
+                                titleColumn.setCellValueFactory(new PropertyValueFactory<>("ingredientAmount"));
+
+                                TableColumn<String, Ingredient> unitColumn = new TableColumn<>("Unit");
+                                unitColumn.setCellValueFactory(new PropertyValueFactory<>("unitTypeAbbreviation"));
+
+                                tableView.getColumns().addAll(idColumn, nameColumn, descColumn, titleColumn, unitColumn);
+
+                                for (Ingredient ingredient : ingredientList) {
+                                    tableView.getItems().add(ingredient);
+                                }
+
+                            }catch (NullPointerException e){
+                            }
+                        }
+
                         break;
                     case "POST":
                         httpLabel.setText(restClient.POST(urlTextField.getText(), "test"));
@@ -260,6 +297,7 @@ public class MainClient extends Application {
                         httpLabel.setText(restClient.DELETE(urlTextField.getText()));
                         break;
                     default:
+                        httpLabel.setText("Unexpected Error");
                         break;
                 }
             }
@@ -372,6 +410,23 @@ public class MainClient extends Application {
             for (JsonElement e : categories)
             {
                 resultsArrayList.add(jdc.deserialize(e, Steps.class));
+            }
+
+            return resultsArrayList;
+        }
+    }
+
+    public static class IngredientsDeserializer implements JsonDeserializer<List<Ingredient>>
+    {
+        @Override
+        public List<Ingredient> deserialize(JsonElement je, Type type, JsonDeserializationContext jdc) throws JsonParseException
+        {
+            JsonArray ingredients = je.getAsJsonObject().getAsJsonArray("ingredients");
+            ArrayList<Ingredient> resultsArrayList = new ArrayList<>();
+
+            for (JsonElement e : ingredients)
+            {
+                resultsArrayList.add(jdc.deserialize(e, Ingredient.class));
             }
 
             return resultsArrayList;

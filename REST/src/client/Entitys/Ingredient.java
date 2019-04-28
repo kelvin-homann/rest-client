@@ -9,6 +9,22 @@ public class Ingredient {
     private String unitTypeName;
     private String unitTypeAbbreviation;
     private String customUnit;
+    private String joinedUnitName;
+    private String unicodeAmountUnitShort;
+
+    public String getJoinedUnitName() {
+        return joinedUnitName;
+    }
+
+    public String getUnicodeAmountUnitShort() {
+        return unicodeAmountUnitShort;
+    }
+
+    public String getUnicodeAmountUnitLong() {
+        return unicodeAmountUnitLong;
+    }
+
+    private String unicodeAmountUnitLong;
 
     public int getIngredientId() {
         return ingredientId;

@@ -18,6 +18,8 @@
       <element id="archive" name="REST.jar">
         <element id="module-output" name="REST" />
       </element>
+      <element id="library" level="project" name="gson-2.8.5" />
+      <element id="library" level="project" name="hk2-utils-2.5.0-b32" />
     </root>
   </artifact>
 </component>
