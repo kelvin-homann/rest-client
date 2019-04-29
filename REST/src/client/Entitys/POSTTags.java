@@ -1,27 +1,27 @@
 package client.Entitys;
 
-import javafx.scene.control.Label;
+import java.util.ArrayList;
 
 public class POSTTags {
     private int userId;
-    private String accesstoken;
-    private String name;
+    private String accessToken;
+    private ArrayList<String> tags;
 
     public int getUserId() {
         return userId;
     }
 
-    public String getAccesstoken() {
-        return accesstoken;
+    public String getAccessToken() {
+        return accessToken;
     }
 
-    public String getName() {
-        return name;
+    public ArrayList<String> getTags() {
+        return tags;
     }
 
-    public POSTTags(int userId, String accesstoken, String name) {
+    public POSTTags(int userId, String accessToken, ArrayList<String> tags) {
         this.userId = userId;
-        this.accesstoken = accesstoken;
-        this.name = name;
+        this.accessToken = accessToken;
+        this.tags = tags;
     }
 }

@@ -26,7 +26,7 @@ public class RESTController {
 		return string;
 	}
 
-	public String PUT(String path, String update){
+	public void PUT(String path, String update){
 		try {
 			Gson gson = new Gson();
 
@@ -36,16 +36,15 @@ public class RESTController {
 			Invocation.Builder invocationBuilder =  webTarget.request(MediaType.APPLICATION_JSON);
 			Response response = invocationBuilder.put(Entity.entity(gson.toJson(update), MediaType.APPLICATION_JSON));
 
-            return response.getStatusInfo() + " | " + response.getStatus();
-
 		} catch (WebApplicationException e){
 			e.getResponse();
 		}
 
-        return "Error";
 	}
 
 	public String POST(String path, String update){
+		Response response = null;
+
 		try {
 			Gson gson = new Gson();
 			Client client = ClientBuilder.newClient();
@@ -53,15 +52,12 @@ public class RESTController {
 			WebTarget webTarget = client.target(path);
 
 			Invocation.Builder invocationBuilder =  webTarget.request(MediaType.APPLICATION_JSON);
-			Response response = invocationBuilder.post(Entity.entity(gson.toJson(update), MediaType.APPLICATION_JSON));
-
-            return response.getStatusInfo() + " | " + response.getStatus();
-
+			response = invocationBuilder.post(Entity.entity(gson.toJson(update), MediaType.APPLICATION_JSON));
 		} catch (WebApplicationException e){
 			e.getResponse();
 		}
-
-        return "Unknown Error";
+		assert response != null;
+		return response.readEntity(String.class);
 	}
 
 	public String DELETE(String path){

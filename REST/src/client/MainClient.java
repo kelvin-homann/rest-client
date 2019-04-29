@@ -22,6 +22,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 // TODO Javadoc
@@ -51,6 +53,14 @@ public class MainClient extends Application {
         }
         assert json != null;
         return gson.fromJson(json, User.class);
+    }
+
+    private ArrayList<String> getTagsList(String s){
+        ArrayList<String> list = new ArrayList<>(Collections.singletonList(s));
+        if (s.contains(",")){
+            list = new ArrayList<>(Arrays.asList(s.split(",")));
+        }
+        return list;
     }
 
     @Override
@@ -171,12 +181,14 @@ public class MainClient extends Application {
         createButton.addEventHandler(ActionEvent.ACTION, event -> {
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             try {
-                tag = new POSTTags(Integer.parseInt(uidField.getText()), tokenField.getText(), nameField.getText());
+                ArrayList<String> tagList = getTagsList(nameField.getText());
+                tag = new POSTTags(Integer.parseInt(uidField.getText()), tokenField.getText(), tagList);
             } catch (NumberFormatException e) {
                 e.printStackTrace();
             }
             tagJSON = gson.toJson(tag);
             jsonLabel.setText(tagJSON);
+            System.out.println(tagJSON);
         });
 
         // Send Button Event handling: on click
@@ -199,7 +211,8 @@ public class MainClient extends Application {
                     if (httpResultsArrayList != null)
                         httpLabel.setText(httpResultsArrayList.get(0).getMessage() + " | " + httpResultsArrayList.get(0).getResultCode());
 
-                    if (urlTextField.getText().contains("recipes") || !urlTextField.getText().contains("categories") || !urlTextField.getText().contains("tags") || !urlTextField.getText().contains("steps")) {
+                    if (urlTextField.getText().contains("recipes") && !urlTextField.getText().contains("categories")
+                            &&  !urlTextField.getText().contains("tags") &&  !urlTextField.getText().contains("steps")) {
                         try {
                             // Clearing the TableView
                             clearTable(tableView);
@@ -391,9 +404,21 @@ public class MainClient extends Application {
 
                     break;
                 case "POST":
-                    httpLabel.setText(restController.POST(urlTextField.getText(), tagJSON));
+                    // Create List with needed Objects
+                    String httpResponsePost = restController.POST(urlTextField.getText(), tagJSON);
+                    System.out.println(httpResponsePost);
+                    Type gettingHttpPostResponse = new TypeToken<List<Results>>() {}.getType();
+                    Gson httpPostGson = new GsonBuilder().registerTypeAdapter(gettingHttpPostResponse, new ResultsDeserializer()).create();
+                    List<Results> httpPostResultsArrayList = httpPostGson.fromJson(httpResponsePost, gettingHttpPostResponse);
+
+                    if (httpPostResultsArrayList != null)
+                        httpLabel.setText(httpPostResultsArrayList.get(0).getMessage() + " | " + httpPostResultsArrayList.get(0).getResultCode());
+                    else
+                        httpLabel.setText("");
+
+//                    restController.POST(urlTextField.getText(), tagJSON);
                 case "PUT":
-                    httpLabel.setText(restController.PUT(urlTextField.getText(), "test"));
+                    restController.PUT(urlTextField.getText(), "test");
                     break;
                 case "DELETE":
                     httpLabel.setText(restController.DELETE(urlTextField.getText()));
