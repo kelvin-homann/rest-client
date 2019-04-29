@@ -41,12 +41,17 @@ public class MainClient extends Application {
         Gson gson = new Gson();
         JsonReader json = null;
         try {
-            json = new JsonReader(new FileReader("user.json"));
+            File currentDirFile = new File(".");
+            json = new JsonReader(new FileReader(currentDirFile.getAbsolutePath() + "/REST/user.json"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
         return gson.fromJson(json, User.class);
     }
+
+//    private GridPane getTopLayout(){
+//        return new GridPane();
+//    }
 
     @Override
     public void start(Stage primaryStage) {
@@ -105,7 +110,7 @@ public class MainClient extends Application {
 
         Label descLabel = new Label("Create new Tag");
         Label uidLabel = new Label("User ID");
-        Label tokenLabel= new Label("Acesstoken");
+        Label tokenLabel= new Label("Accesstoken");
         Label nameLabel = new Label("Name");
         Label jsonLabel = new Label();
 
@@ -177,14 +182,14 @@ public class MainClient extends Application {
         buttonSend.addEventHandler(ActionEvent.ACTION, new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                // RESTClient
-                RESTClient restClient = new RESTClient();
+                // RESTController
+                RESTController restController = new RESTController();
 
                 // switch cases between Combobox value
                 switch (comboBox.getValue().toString()) {
                     case "GET":
                         // Getting the http Results
-                        String httpResponse = restClient.GET(urlTextField.getText());
+                        String httpResponse = restController.GET(urlTextField.getText());
 
                         // Create List with needed Objects
                         Type gettingHttpResponse = new TypeToken<List<Results>>(){}.getType();
@@ -376,12 +381,12 @@ public class MainClient extends Application {
 
                         break;
                     case "POST":
-                        httpLabel.setText(restClient.POST(urlTextField.getText(), tagJSON));
+                        httpLabel.setText(restController.POST(urlTextField.getText(), tagJSON));
                     case "PUT":
-                        httpLabel.setText(restClient.PUT(urlTextField.getText(), "test"));
+                        httpLabel.setText(restController.PUT(urlTextField.getText(), "test"));
                         break;
                     case "DELETE":
-                        httpLabel.setText(restClient.DELETE(urlTextField.getText()));
+                        httpLabel.setText(restController.DELETE(urlTextField.getText()));
                         break;
                     default:
                         httpLabel.setText("Unexpected Error");
