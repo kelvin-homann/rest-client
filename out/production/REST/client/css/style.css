@@ -1,0 +1,136 @@
+.root {
+    -fx-font-size: 14px;
+    -fx-font-family: "Roboto";
+    -fx-background-color: #141414;
+}
+
+.button{
+    -fx-font-size: 16px;
+    -fx-font-family: "Roboto";
+    -fx-background-color: #52d12b;
+    -fx-padding: 10px 40px 10px 40px;
+    -fx-background-radius: 4 4 4 4;
+    -fx-text-fill: #ffffff;
+}
+
+.button:pressed{
+    -fx-background-color: #7dff56;
+}
+
+.button:hover{
+    -fx-background-color: #7dff56;
+}
+
+.button:focused{
+    -fx-background-color: #52d12b;
+
+}
+
+.combo-box .list-cell
+{
+    -fx-background: #161616;
+    -fx-alignment: center;
+    -fx-background-color: #161616;
+    -fx-font-size: 16px;
+    -fx-font-family: "Roboto";
+    -fx-text-fill:  #ffffff;
+    -fx-padding: 10px 20px 10px 20px;
+}
+
+.combo-box-popup .list-view .list-cell:filled:hover
+{
+    -fx-background-color: #202020;
+    -fx-text-fill: #ffffff;
+}
+
+.combo-box-base
+{
+    -fx-background-color: #202020;
+}
+
+.combo-box-base:showing
+{
+    -fx-color: #141414;
+}
+
+.text-field {
+    -fx-background-color: #202020;
+    -fx-background-radius: 2;
+    -fx-font-size: 16px;
+    -fx-font-family: "Roboto";
+    -fx-text-fill: #ffffff;
+    -fx-padding: 10px;
+}
+.text-field:focused {
+    -fx-background-color: #242424;
+}
+
+.table-view{
+    -fx-background-color: transparent;
+    -fx-background-radius: 2;
+    -fx-font-size: 16px;
+    -fx-font-family: "Roboto";
+    -fx-text-fill: #ffffff;
+}
+
+.table-view .filler{
+    -fx-background-color: transparent;
+}
+
+.table-view:focused{
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header-background{
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header-background .label{
+    -fx-text-fill: white;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+.table-view .table-cell{
+    -fx-text-fill: white;
+}
+
+.table-row-cell{
+    -fx-background-color: -fx-table-cell-border-color, #212121;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em; /* 0 */
+}
+
+.table-row-cell:odd{
+    -fx-background-color: transparent;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em; /* 0 */
+}
+
+.table-row-cell:selected {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 1;
+}
+
+.table-row-cell {
+    -fx-table-cell-border-color: #3d3d3d;
+}
+
+.scroll-bar{
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .decrement-button{
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .increment-button{
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #313131;
+}
