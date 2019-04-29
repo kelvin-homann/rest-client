@@ -13,10 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
@@ -48,7 +45,7 @@ public class MainClient extends Application {
         JsonReader json = null;
         try {
             File currentDirFile = new File(".");
-            json = new JsonReader(new FileReader(currentDirFile.getAbsolutePath() + "/REST/user.json"));
+            json = new JsonReader(new FileReader(currentDirFile.getAbsolutePath() + "/user.json"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -155,10 +152,16 @@ public class MainClient extends Application {
         postCenter.add(jsonLabel, 2, 5);
         postCenter.setVisible(false);
 
+        HBox putanddelCenter = new HBox();
+        Label notImplementedLabel = new Label("Not implemented");
+        putanddelCenter.getChildren().add(notImplementedLabel);
+        putanddelCenter.setAlignment(Pos.CENTER);
+        putanddelCenter.setVisible(false);
+
         StackPane stackPane = new StackPane();
         ObservableList<javafx.scene.Node> list = stackPane.getChildren();
 
-        list.addAll(getCenter, postCenter);
+        list.addAll(getCenter, postCenter, putanddelCenter);
 
         userButton.addEventHandler(ActionEvent.ACTION, event -> {
             uidField.setText(String.valueOf(getUser().getUserId()));
@@ -414,6 +417,12 @@ public class MainClient extends Application {
                 postCenter.setVisible(true);
             } else {
                 postCenter.setVisible(false);
+            }
+
+            if (ov.getValue().equals("PUT") || ov.getValue().equals("DELETE")) {
+                putanddelCenter.setVisible(true);
+            } else {
+                putanddelCenter.setVisible(false);
             }
         });
 
