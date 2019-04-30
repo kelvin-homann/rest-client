@@ -2,6 +2,9 @@ package client.Entitys;
 
 import java.util.ArrayList;
 
+/**
+ * represents the steps
+ */
 public class Steps {
     private int recipeId;
     private int stepId;

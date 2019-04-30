@@ -1,5 +1,8 @@
 package client.Entitys;
 
+/**
+ * represents the http results
+ */
 public class Results {
     private String resultCode;
     private int resultType;

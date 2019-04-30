@@ -1,5 +1,8 @@
 package client.Entitys;
 
+/**
+ * Represents the categories
+ */
 public class Category {
     private int categoryId;
     private String name;

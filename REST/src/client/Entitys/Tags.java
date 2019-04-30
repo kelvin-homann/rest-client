@@ -1,5 +1,8 @@
 package client.Entitys;
 
+/**
+ * represents the tags
+ */
 public class Tags {
     private int tagId;
     private String name;

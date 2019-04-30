@@ -1,5 +1,8 @@
 package client.Entitys;
 
+/**
+ * Represents the ingredients
+ */
 public class Ingredient {
     private int ingredientId;
     private String ingredientName;
@@ -11,6 +14,7 @@ public class Ingredient {
     private String customUnit;
     private String joinedUnitName;
     private String unicodeAmountUnitShort;
+    private String unicodeAmountUnitLong;
 
     public String getJoinedUnitName() {
         return joinedUnitName;
@@ -23,8 +27,6 @@ public class Ingredient {
     public String getUnicodeAmountUnitLong() {
         return unicodeAmountUnitLong;
     }
-
-    private String unicodeAmountUnitLong;
 
     public int getIngredientId() {
         return ingredientId;

@@ -1,5 +1,8 @@
 package client.Entitys;
 
+/**
+ * represents the recipes
+ */
 public class Recipe {
     private int recipeId;
     private int languageId;

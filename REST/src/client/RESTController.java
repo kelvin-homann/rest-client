@@ -5,67 +5,96 @@ import javax.ws.rs.client.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-public class RESTController {
-	public String GET(String path){
-		String string = "";
-		try {
-			Client client = ClientBuilder.newClient();
-			WebTarget webTarget = client.target(path);
+/**
+ * <h1>REST Client Controller</h1>
+ * Controller for the Jersey REST Client API
+ * Implementation of CRUD-Operations
+ *
+ * @author Kelvin Homann
+ */
+class RESTController {
+    /**
+     * Create: POST new Resource with specified path and JSON param
+     *
+     * @param path   URL e.g https://www.sebastianzander.de/cookaweb/api/v1/tags
+     * @param create JSON string with accesstoken, userid and object data
+     * @return api response as json
+     */
+    String POST(String path, String create) {
+        Response response = null;
 
-			Invocation.Builder invocationBuilder =  webTarget.request(MediaType.APPLICATION_JSON);
-			Response response = invocationBuilder.get();
+        try {
+            Client client = ClientBuilder.newClient(); // Creating Client
+            WebTarget webTarget = client.target(path); // Setting target path
 
-			if (response.getStatus() == 200){
-				string = response.readEntity(String.class);
-			}
-		} catch (WebApplicationException e){
+            Invocation.Builder invocationBuilder = webTarget.request(MediaType.APPLICATION_JSON); // Setting Mediatype
+            response = invocationBuilder.post(Entity.entity(create, MediaType.APPLICATION_JSON)); // Executing POST
+        } catch (WebApplicationException e) {
             e.getResponse();
         }
-		return string;
-	}
+        assert response != null;
+        return response.readEntity(String.class);
+    }
 
-	public void PUT(String path, String update){
-		try {
-			Client client = ClientBuilder.newClient();
-			WebTarget webTarget = client.target(path);
+    /**
+     * Retrieve: GET request to retrieve JSON response
+     *
+     * @param path URL e.g https://www.sebastianzander.de/cookaweb/api/v1/tags
+     * @return http response as JSON string
+     */
+    String GET(String path) {
+        String string = "";
+        try {
+            Client client = ClientBuilder.newClient(); // Creating Client
+            WebTarget webTarget = client.target(path); // Setting target path
 
-			Invocation.Builder invocationBuilder =  webTarget.request(MediaType.APPLICATION_JSON);
-			Response response = invocationBuilder.put(Entity.entity(update, MediaType.APPLICATION_JSON));
+            Invocation.Builder invocationBuilder = webTarget.request(MediaType.APPLICATION_JSON); // Setting Mediatype
+            Response response = invocationBuilder.get(); // Executing GET
+            string = response.readEntity(String.class); // Setting string to response JSON
+        } catch (WebApplicationException e) {
+            e.getResponse();
+        }
+        return string;
+    }
 
-		} catch (WebApplicationException e){
-			e.getResponse();
-		}
+    /**
+     * Update: PUT adjust ressource based on path and JSON param
+     *
+     * @param path   URL e.g https://www.sebastianzander.de/cookaweb/api/v1/tags
+     * @param update JSON string with accesstoken, userid and object data
+     */
+    void PUT(String path, String update) {
+        try {
+            Client client = ClientBuilder.newClient(); // Creating Client
+            WebTarget webTarget = client.target(path); // Setting target path
 
-	}
+            Invocation.Builder invocationBuilder = webTarget.request(MediaType.APPLICATION_JSON); // Setting Mediatype
+            invocationBuilder.put(Entity.entity(update, MediaType.APPLICATION_JSON)); // Executing PUT with update JSON string
 
-	public String POST(String path, String update){
-		Response response = null;
+        } catch (WebApplicationException e) {
+            e.getResponse();
+        }
 
-		try {
-			Client client = ClientBuilder.newClient();
-			WebTarget webTarget = client.target(path);
+    }
 
-			Invocation.Builder invocationBuilder =  webTarget.request(MediaType.APPLICATION_JSON);
-			response = invocationBuilder.post(Entity.entity(update, MediaType.APPLICATION_JSON));
-		} catch (WebApplicationException e){
-			e.getResponse();
-		}
-		assert response != null;
-		return response.readEntity(String.class);
-	}
+    /**
+     * Delete: DELETE ressource from path
+     *
+     * @param path URL e.g https://www.sebastianzander.de/cookaweb/api/v1/tags
+     * @return api response as status string
+     */
+    String DELETE(String path) {
+        try {
+            Client client = ClientBuilder.newClient(); // Creating Client
+            WebTarget webTarget = client.target(path); // Setting target path
 
-	public String DELETE(String path){
-		try{
-			Client client = ClientBuilder.newClient();
-			WebTarget webTarget = client.target(path);
-
-			Invocation.Builder invocationBuilder =  webTarget.request();
-			Response response = invocationBuilder.delete();
+            Invocation.Builder invocationBuilder = webTarget.request();
+            Response response = invocationBuilder.delete(); // Executing DELETE
 
             return response.getStatusInfo() + " | " + response.getStatus();
-		} catch (WebApplicationException e){
-			e.getResponse();
-		}
-		return "Unknown Error";
-	}
+        } catch (WebApplicationException e) {
+            e.getResponse();
+        }
+        return "Unknown Error";
+    }
 }

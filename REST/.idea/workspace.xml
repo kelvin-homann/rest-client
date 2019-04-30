@@ -8,15 +8,17 @@
   <component name="ChangeListManager">
     <list default="true" id="d3a4227d-9d2a-4d79-a2bd-7ea324435bf0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/REST.iml" beforeDir="false" afterPath="$PROJECT_DIR$/REST.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/REST/client/MainClient$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/REST/client/MainClient$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/REST/client/MainClient$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/REST/client/MainClient$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/REST/client/MainClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/REST/client/MainClient.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/Entitys/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Entitys/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/Entitys/Name.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/Entitys/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Entitys/Ingredient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/Entitys/POSTTags.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Entitys/POSTTags.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/Entitys/Recipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Entitys/Recipe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/Entitys/Results.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Entitys/Results.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/Entitys/Steps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Entitys/Steps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/Entitys/Tags.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Entitys/Tags.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/Entitys/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Entitys/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/MainClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/MainClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/RESTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/RESTController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client_gui_hierarchie.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/../client_gui_hierarchie.drawio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/css/style.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,11 +43,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/client/MainClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="462">
+              <caret line="243" column="30" lean-forward="true" selection-start-line="243" selection-start-column="30" selection-end-line="243" selection-end-column="30" />
               <folding>
                 <element signature="class#RecipeDeserializer#0;class#MainClient#0" />
                 <element signature="class#ResultsDeserializer#0;class#MainClient#0" />
@@ -59,36 +61,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/Entitys/Ingredient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
-              <folding>
-                <element signature="e#444#445#0" expanded="true" />
-                <element signature="e#481#482#0" expanded="true" />
-                <element signature="e#530#531#0" expanded="true" />
-                <element signature="e#575#576#0" expanded="true" />
-                <element signature="e#623#624#0" expanded="true" />
-                <element signature="e#667#668#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/Entitys/Category.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/client/RESTController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="560">
+              <caret line="95" column="28" lean-forward="true" selection-start-line="95" selection-start-column="28" selection-end-line="95" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -115,6 +91,9 @@
       <find>user</find>
       <find>postcenter</find>
       <find>postCenterLeft</find>
+      <find>get</find>
+      <find>GET</find>
+      <find>test</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -161,24 +140,24 @@
         <option value="$PROJECT_DIR$/src/client/RecipeEntity.java" />
         <option value="$PROJECT_DIR$/src/client/Response.java" />
         <option value="$PROJECT_DIR$/src/client/Results.java" />
-        <option value="$PROJECT_DIR$/src/client/Entitys/Results.java" />
         <option value="$PROJECT_DIR$/src/client/Entitys/RecipeEntity.java" />
-        <option value="$PROJECT_DIR$/src/client/Entitys/Recipe.java" />
-        <option value="$PROJECT_DIR$/src/client/Entitys/Steps.java" />
         <option value="$PROJECT_DIR$/src/client/Entitys/Name.java" />
         <option value="$PROJECT_DIR$/src/client/Entitys/Description.java" />
         <option value="$PROJECT_DIR$/src/resources/entitys/Ingredient.java" />
-        <option value="$PROJECT_DIR$/src/client/css/style.css" />
-        <option value="$PROJECT_DIR$/src/client/Entitys/Ingredient.java" />
         <option value="$PROJECT_DIR$/src/client/RESTClient.java" />
-        <option value="$PROJECT_DIR$/src/client/Entitys/Tags.java" />
         <option value="$PROJECT_DIR$/src/client/user.json" />
-        <option value="$PROJECT_DIR$/src/client/Entitys/User.java" />
-        <option value="$PROJECT_DIR$/src/client/Entitys/POSTTags.java" />
         <option value="$PROJECT_DIR$/user.json" />
         <option value="$PROJECT_DIR$/src/client/Entitys/Category.java" />
-        <option value="$PROJECT_DIR$/src/client/MainClient.java" />
+        <option value="$PROJECT_DIR$/src/client/Entitys/Recipe.java" />
+        <option value="$PROJECT_DIR$/src/client/Entitys/Results.java" />
+        <option value="$PROJECT_DIR$/src/client/Entitys/Steps.java" />
+        <option value="$PROJECT_DIR$/src/client/Entitys/Tags.java" />
+        <option value="$PROJECT_DIR$/src/client/Entitys/User.java" />
+        <option value="$PROJECT_DIR$/src/client/Entitys/Ingredient.java" />
+        <option value="$PROJECT_DIR$/src/client/Entitys/POSTTags.java" />
+        <option value="$PROJECT_DIR$/src/client/css/style.css" />
         <option value="$PROJECT_DIR$/src/client/RESTController.java" />
+        <option value="$PROJECT_DIR$/src/client/MainClient.java" />
       </list>
     </option>
   </component>
@@ -196,6 +175,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -208,12 +189,23 @@
               <item name="REST" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="REST" type="b2602c69:ProjectViewProjectNode" />
+              <item name="REST" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="REST" type="b2602c69:ProjectViewProjectNode" />
+              <item name="REST" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -229,6 +221,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -425,7 +418,8 @@
       <workItem from="1556480962519" duration="10281000" />
       <workItem from="1556547704975" duration="1350000" />
       <workItem from="1556564617484" duration="5139000" />
-      <workItem from="1556628675727" duration="4905000" />
+      <workItem from="1556628675727" duration="6047000" />
+      <workItem from="1556648980686" duration="11155000" />
     </task>
     <task id="LOCAL-00001" summary="small changes;">
       <created>1556264757448</created>
@@ -504,11 +498,18 @@
       <option name="project" value="LOCAL" />
       <updated>1556569731313</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="readjusted category object;">
+      <created>1556634181557</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1556634181557</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="162455000" />
+    <option name="totallyTimeSpent" value="174752000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -523,7 +524,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2153518" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21748401" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -532,7 +533,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -574,7 +575,8 @@
     <MESSAGE value="removed unneeded files" />
     <MESSAGE value="added put and del msg;" />
     <MESSAGE value="post method works now for tags; supports single items and lists divided by &quot;,&quot;;" />
-    <option name="LAST_COMMIT_MESSAGE" value="post method works now for tags; supports single items and lists divided by &quot;,&quot;;" />
+    <MESSAGE value="readjusted category object;" />
+    <option name="LAST_COMMIT_MESSAGE" value="readjusted category object;" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Test.java" />
@@ -621,139 +623,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/Entitys.java" />
-    <entry file="file://$PROJECT_DIR$/src/client/Entitys/Steps.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="e#296#297#0" expanded="true" />
-            <element signature="e#327#328#0" expanded="true" />
-            <element signature="e#357#358#0" expanded="true" />
-            <element signature="e#386#387#0" expanded="true" />
-            <element signature="e#420#421#0" expanded="true" />
-            <element signature="e#453#454#0" expanded="true" />
-            <element signature="e#489#490#0" expanded="true" />
-            <element signature="e#521#522#0" expanded="true" />
-            <element signature="e#563#564#0" expanded="true" />
-            <element signature="e#601#602#0" expanded="true" />
-            <element signature="e#654#655#0" expanded="true" />
-            <element signature="e#688#689#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/Entitys/Results.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
-          <folding>
-            <element signature="e#269#270#0" expanded="true" />
-            <element signature="e#302#303#0" expanded="true" />
-            <element signature="e#354#355#0" expanded="true" />
-            <element signature="e#398#399#0" expanded="true" />
-            <element signature="e#432#433#0" expanded="true" />
-            <element signature="e#465#466#0" expanded="true" />
-            <element signature="e#514#515#0" expanded="true" />
-            <element signature="e#558#559#0" expanded="true" />
-            <element signature="e#592#593#0" expanded="true" />
-            <element signature="e#622#623#0" expanded="true" />
-            <element signature="e#668#669#0" expanded="true" />
-            <element signature="e#706#707#0" expanded="true" />
-            <element signature="e#746#747#0" expanded="true" />
-            <element signature="e#785#786#0" expanded="true" />
-            <element signature="e#846#847#0" expanded="true" />
-            <element signature="e#902#903#0" expanded="true" />
-            <element signature="e#946#947#0" expanded="true" />
-            <element signature="e#986#987#0" expanded="true" />
-            <element signature="e#1052#1053#0" expanded="true" />
-            <element signature="e#1110#1111#0" expanded="true" />
-            <element signature="e#1150#1151#0" expanded="true" />
-            <element signature="e#1189#1190#0" expanded="true" />
-            <element signature="e#1250#1251#0" expanded="true" />
-            <element signature="e#1306#1307#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/entitys/Ingredient.java" />
     <entry file="file://$PROJECT_DIR$/src/client/Entitys/Description.java" />
     <entry file="file://$PROJECT_DIR$/src/html/index.html" />
-    <entry file="file://$PROJECT_DIR$/src/client/Entitys/Recipe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="21" lean-forward="true" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="72" column="27" lean-forward="true" selection-start-line="70" selection-start-column="3" selection-end-line="72" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/Entitys/Tags.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/Entitys/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-          <folding>
-            <element signature="e#128#129#0" expanded="true" />
-            <element signature="e#157#158#0" expanded="true" />
-            <element signature="e#194#195#0" expanded="true" />
-            <element signature="e#227#228#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/RESTClient.java" />
-    <entry file="file://$PROJECT_DIR$/src/client/Entitys/POSTTags.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="39" lean-forward="true" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
-          <folding>
-            <element signature="e#194#195#0" expanded="true" />
-            <element signature="e#223#224#0" expanded="true" />
-            <element signature="e#261#262#0" expanded="true" />
-            <element signature="e#295#296#0" expanded="true" />
-            <element signature="e#326#327#0" expanded="true" />
-            <element signature="e#353#354#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/Entitys/Name.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding>
-            <element signature="e#97#98#0" expanded="true" />
-            <element signature="e#122#123#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/Entitys/Ingredient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
-          <folding>
-            <element signature="e#444#445#0" expanded="true" />
-            <element signature="e#481#482#0" expanded="true" />
-            <element signature="e#530#531#0" expanded="true" />
-            <element signature="e#575#576#0" expanded="true" />
-            <element signature="e#623#624#0" expanded="true" />
-            <element signature="e#667#668#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/Entitys/Name.java" />
     <entry file="file://$PROJECT_DIR$/user.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -761,17 +635,83 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/Entitys/Ingredient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/Entitys/POSTTags.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="43" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/Entitys/Recipe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/Entitys/Steps.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/Entitys/Results.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/Entitys/Tags.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/Entitys/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/Entitys/Category.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="51">
+          <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1207">
+          <caret line="71" selection-start-line="71" selection-end-line="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/RESTController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="95" column="28" lean-forward="true" selection-start-line="95" selection-start-column="28" selection-end-line="95" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/MainClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="462">
+          <caret line="243" column="30" lean-forward="true" selection-start-line="243" selection-start-column="30" selection-end-line="243" selection-end-column="30" />
           <folding>
             <element signature="class#RecipeDeserializer#0;class#MainClient#0" />
             <element signature="class#ResultsDeserializer#0;class#MainClient#0" />
@@ -779,16 +719,6 @@
             <element signature="class#TagsDeserializer#0;class#MainClient#0" />
             <element signature="class#StepsDeserializer#0;class#MainClient#0" />
             <element signature="class#IngredientsDeserializer#0;class#MainClient#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/RESTController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
