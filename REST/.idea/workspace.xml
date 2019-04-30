@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_TEST_SOURCES" value="false" />
+  </component>
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="REST" />
@@ -7,18 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d3a4227d-9d2a-4d79-a2bd-7ea324435bf0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/Entitys/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Entitys/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/Entitys/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Entitys/Ingredient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/Entitys/POSTTags.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Entitys/POSTTags.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/Entitys/Recipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Entitys/Recipe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/Entitys/Results.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Entitys/Results.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/Entitys/Steps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Entitys/Steps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/Entitys/Tags.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Entitys/Tags.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/Entitys/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Entitys/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/MainClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/MainClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/RESTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/RESTController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client_gui_hierarchie.drawio" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,8 +39,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/client/MainClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="243" column="30" lean-forward="true" selection-start-line="243" selection-start-column="30" selection-end-line="243" selection-end-column="30" />
+            <state relative-caret-position="17">
+              <caret line="441" column="108" selection-start-line="441" selection-start-column="108" selection-end-line="441" selection-end-column="108" />
               <folding>
                 <element signature="class#RecipeDeserializer#0;class#MainClient#0" />
                 <element signature="class#ResultsDeserializer#0;class#MainClient#0" />
@@ -63,8 +56,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/client/RESTController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="95" column="28" lean-forward="true" selection-start-line="95" selection-start-column="28" selection-end-line="95" selection-end-column="28" />
+            <state relative-caret-position="1564">
+              <caret line="95" column="28" selection-start-line="95" selection-start-column="28" selection-end-line="95" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -175,8 +168,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -195,23 +186,18 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="REST" type="b2602c69:ProjectViewProjectNode" />
-              <item name="REST" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556491347583" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556662445754" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -509,7 +495,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174752000" />
+    <option name="totallyTimeSpent" value="175006000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -522,9 +508,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21748401" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2196162" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -533,7 +518,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -700,8 +685,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/RESTController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="95" column="28" lean-forward="true" selection-start-line="95" selection-start-column="28" selection-end-line="95" selection-end-column="28" />
+        <state relative-caret-position="1564">
+          <caret line="95" column="28" selection-start-line="95" selection-start-column="28" selection-end-line="95" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -710,8 +695,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/MainClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="243" column="30" lean-forward="true" selection-start-line="243" selection-start-column="30" selection-end-line="243" selection-end-column="30" />
+        <state relative-caret-position="17">
+          <caret line="441" column="108" selection-start-line="441" selection-start-column="108" selection-end-line="441" selection-end-column="108" />
           <folding>
             <element signature="class#RecipeDeserializer#0;class#MainClient#0" />
             <element signature="class#ResultsDeserializer#0;class#MainClient#0" />
