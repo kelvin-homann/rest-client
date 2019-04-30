@@ -12,7 +12,6 @@
     <orderEntry type="library" name="hk2-utils-2.5.0-b32" level="project" />
     <orderEntry type="library" name="gson-2.8.5" level="project" />
     <orderEntry type="library" name="mysql-connector-java-8.0.15" level="project" />
-    <orderEntry type="library" name="javax.ws.rs-api-2.0.1 (2)" level="project" />
     <orderEntry type="library" name="jfoenix-8.0.8" level="project" />
     <orderEntry type="library" name="jfoenix-8.0.8" level="project" />
   </component>

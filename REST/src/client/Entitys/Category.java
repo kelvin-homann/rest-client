@@ -1,13 +1,11 @@
 package client.Entitys;
 
-import java.util.ArrayList;
-
 public class Category {
     private int categoryId;
-    private Name name;
+    private String name;
     private int parentCategoryId;
-    private ArrayList<String> parentCategoryName;
-    private ArrayList<String> description;
+    private String parentCategoryName;
+    private String description;
     private int imageId;
     private String imageFileName;
     private String sortPrefix;
@@ -21,15 +19,15 @@ public class Category {
         return parentCategoryId;
     }
 
-    public ArrayList<String> getParentCategoryName() {
+    public String getParentCategoryName() {
         return parentCategoryName;
     }
 
     public String getName() {
-        return name.getName();
+        return name;
     }
 
-    public ArrayList<String> getDescription() {
+    public String getDescription() {
         return description;
     }
 

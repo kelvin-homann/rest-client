@@ -1,7 +1,5 @@
 package client;
 
-import com.google.gson.Gson;
-
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.client.*;
 import javax.ws.rs.core.MediaType;
@@ -28,13 +26,11 @@ public class RESTController {
 
 	public void PUT(String path, String update){
 		try {
-			Gson gson = new Gson();
-
 			Client client = ClientBuilder.newClient();
 			WebTarget webTarget = client.target(path);
 
 			Invocation.Builder invocationBuilder =  webTarget.request(MediaType.APPLICATION_JSON);
-			Response response = invocationBuilder.put(Entity.entity(gson.toJson(update), MediaType.APPLICATION_JSON));
+			Response response = invocationBuilder.put(Entity.entity(update, MediaType.APPLICATION_JSON));
 
 		} catch (WebApplicationException e){
 			e.getResponse();
@@ -46,13 +42,11 @@ public class RESTController {
 		Response response = null;
 
 		try {
-			Gson gson = new Gson();
 			Client client = ClientBuilder.newClient();
-
 			WebTarget webTarget = client.target(path);
 
 			Invocation.Builder invocationBuilder =  webTarget.request(MediaType.APPLICATION_JSON);
-			response = invocationBuilder.post(Entity.entity(gson.toJson(update), MediaType.APPLICATION_JSON));
+			response = invocationBuilder.post(Entity.entity(update, MediaType.APPLICATION_JSON));
 		} catch (WebApplicationException e){
 			e.getResponse();
 		}

@@ -18,8 +18,8 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,7 +27,6 @@ import java.util.Collections;
 import java.util.List;
 
 // TODO Javadoc
-// TODO refactor ugly code
 public class MainClient extends Application {
     private static final String BASE_URL = "https://www.sebastianzander.de/cookaweb/api/v1/";
     private POSTTags tag; // Tag Object for POST method
@@ -37,6 +36,10 @@ public class MainClient extends Application {
         launch(args);
     }
 
+    /**
+     * Clearing the Table representing the results from GET so it doesnt stack up
+     * @param tableView TableView showing the GET Results
+     */
     private void clearTable(TableView tableView) {
         tableView.getColumns().clear();
         tableView.getItems().clear();
@@ -48,7 +51,7 @@ public class MainClient extends Application {
         try {
             File currentDirFile = new File(".");
             json = new JsonReader(new FileReader(currentDirFile.getAbsolutePath() + "/user.json"));
-        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         assert json != null;
@@ -59,6 +62,7 @@ public class MainClient extends Application {
         ArrayList<String> list = new ArrayList<>(Collections.singletonList(s));
         if (s.contains(",")){
             list = new ArrayList<>(Arrays.asList(s.split(",")));
+            list.replaceAll(String::trim);
         }
         return list;
     }
@@ -145,22 +149,29 @@ public class MainClient extends Application {
         Button createButton = new Button("Create");
         Button userButton = new Button("User");
 
-        GridPane postCenter = new GridPane();
-        postCenter.setHgap(10);
-        postCenter.setVgap(30);
-        postCenter.setAlignment(Pos.TOP_CENTER);
-        postCenter.setPadding(new Insets(50, 0, 0, 0));
-        postCenter.add(descLabel, 0, 0);
-        postCenter.add(uidLabel, 0, 1);
-        postCenter.add(uidField, 1, 1);
-        postCenter.add(tokenLabel, 0, 2);
-        postCenter.add(tokenField, 1, 2);
-        postCenter.add(nameLabel, 0, 3);
-        postCenter.add(nameField, 1, 3);
-        postCenter.add(createButton, 0, 4);
-        postCenter.add(userButton, 1, 4);
-        postCenter.add(jsonLabel, 2, 5);
+        BorderPane postCenter = new BorderPane();
         postCenter.setVisible(false);
+
+        GridPane postCenterRight = new GridPane();
+        postCenterRight.add(jsonLabel, 0, 0);
+        postCenterRight.setPadding(new Insets(60, 250, 0, 0));
+        GridPane postCenterLeft = new GridPane();
+
+        postCenter.setRight(postCenterRight);
+        postCenter.setLeft(postCenterLeft);
+
+        postCenterLeft.setHgap(10);
+        postCenterLeft.setVgap(30);
+        postCenterLeft.setPadding(new Insets(60, 0, 0, 75));
+        postCenterLeft.add(descLabel, 0, 0);
+        postCenterLeft.add(uidLabel, 0, 1);
+        postCenterLeft.add(uidField, 1, 1);
+        postCenterLeft.add(tokenLabel, 0, 2);
+        postCenterLeft.add(tokenField, 1, 2);
+        postCenterLeft.add(nameLabel, 0, 3);
+        postCenterLeft.add(nameField, 1, 3);
+        postCenterLeft.add(createButton, 0, 4);
+        postCenterLeft.add(userButton, 1, 4);
 
         HBox putanddelCenter = new HBox();
         Label notImplementedLabel = new Label("Not implemented");
@@ -211,8 +222,11 @@ public class MainClient extends Application {
                     if (httpResultsArrayList != null)
                         httpLabel.setText(httpResultsArrayList.get(0).getMessage() + " | " + httpResultsArrayList.get(0).getResultCode());
 
-                    if (urlTextField.getText().contains("recipes") && !urlTextField.getText().contains("categories")
-                            &&  !urlTextField.getText().contains("tags") &&  !urlTextField.getText().contains("steps")) {
+                    if (urlTextField.getText().contains("recipes")
+                            && !urlTextField.getText().contains("categories")
+                            &&  !urlTextField.getText().contains("tags")
+                            &&  !urlTextField.getText().contains("steps")
+                            &&  !urlTextField.getText().contains("ingredients")) {
                         try {
                             // Clearing the TableView
                             clearTable(tableView);
@@ -415,8 +429,6 @@ public class MainClient extends Application {
                         httpLabel.setText(httpPostResultsArrayList.get(0).getMessage() + " | " + httpPostResultsArrayList.get(0).getResultCode());
                     else
                         httpLabel.setText("");
-
-//                    restController.POST(urlTextField.getText(), tagJSON);
                 case "PUT":
                     restController.PUT(urlTextField.getText(), "test");
                     break;
