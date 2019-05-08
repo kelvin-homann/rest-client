@@ -1,9 +1,10 @@
 ![cooka](https://i.imgur.com/zvud8sb.png)
 
 Jersey REST Client for cooka.
+
 GUI is developed with JavaFX.
 
-![client-screenshot](https://i.imgur.com/aLdKBs1.jpg)
+![client-screenshot](https://i.imgur.com/M6n2Efz.jpg)
 
 ### Dependencies
 
